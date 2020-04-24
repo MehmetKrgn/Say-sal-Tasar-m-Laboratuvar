@@ -1,0 +1,25 @@
+
+-- SayTas Lab 4 bir girisli 4 to 1 MUX
+-- Mehmet Emin Kirgin, 348270
+
+
+Library IEEE;
+Use IEEE.Std_Logic_1164.all;
+
+Entity MUX4to1 is
+
+Port(A,B,C,D: IN std_logic_vector(3 downto 0);
+           S: IN std_logic_vector(1 downto 0);
+           F: OUT std_logic_vector(3 downto 0));
+End MUX4to1;
+
+Architecture MEK of MUX4to1 is
+Begin
+
+F<= A WHEN S = "00" ELSE
+    B WHEN S = "01" ELSE
+    C WHEN S = "10" ELSE
+    D WHEN S = "11" ELSE
+"ZZ";
+
+End MEK;
